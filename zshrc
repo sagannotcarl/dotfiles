@@ -43,7 +43,7 @@ export DRUSH_PHP='/Applications/MAMP/bin/php/php5.3.6/bin/php'
 # Allows two developers to be credited when pair programming using git.
 hitch() {
   command hitch "$@"
-  if [[ -s "$HOME/.hitch_export_authors" ]] ; then source "$HOME/.hitch_export_authors" ; fi
+  if [[ -s "~/Documents/customizations/hitch_export_authors" ]] ; then source "~/Documents/customizations/hitch_export_authors" ; fi
 }
 alias unhitch='hitch -u'
 # Uncomment to persist pair info between terminal instances
