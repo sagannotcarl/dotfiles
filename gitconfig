@@ -1,0 +1,33 @@
+[user]
+	name = Rocket
+	email = rocket@quilted.coop
+[core]
+	editor = mate -w
+	excludesfile = ~/.gitexcludes
+	autocrlf = input
+[alias]
+	st = status
+	co = checkout
+	dt = difftool
+	b = branch
+	l = log --decorate=full --pretty=oneline
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+[color]
+	diff = auto
+	interactive = auto
+	status = auto
+	branch = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
+[mergetool "diffmerge"]
+	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
+	trustExitCode = false
+[merge]
+	tool = vimdiff
