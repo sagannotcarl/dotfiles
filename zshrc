@@ -34,7 +34,7 @@ plugins=(git brew gem github)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/Applications/MAMP/Library/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+export PATH=~/.rbenv/bin:/usr/local:/usr/bin:/usr/local/git/bin:~/.gem/ruby/1.8/bin:/Applications/MAMP/bin/php/php5.3.6/bin:/Applications/Postgres.app/Contents/MacOS/bin:/usr/local/opt/ruby/bin:$PATH
 
 # Setup env var for MAMP & drush
 export DRUSH_PHP='/Applications/MAMP/bin/php/php5.3.6/bin/php'
@@ -51,13 +51,29 @@ hitch
 
 # Add shortcuts for common bash commands.
 alias c=clear
-
-# Add shortcuts for development.
-alias mamp="cd ~/Documents/htdocs"
+alias quilted="cd ~/Documents/Quilted/"
+alias impact="cd ~/Documents/Coding/Impact"
 
 # Use a reverse SSH tunnel in order to use the rmate command on the remote server.
-alias sshq2="ssh -R 52698:127.0.0.1:52698 mimlee@quilted2.gaiahost.coop"
+alias sshq2="ssh -R 52698:127.0.0.1:52698 colin@quilted2.gaiahost.coop"
+alias sshnpm="ssh -R 52698:127.0.0.1:52698 colin@newplaymap.org"
+alias sshdg="ssh -p 21114 -R 52698:127.0.0.1:52698 digitalgratitude@web.electricembers.net"
+alias sshees="ssh -p 1891 staging@staging.equalexchange.coop"
+alias ssheep="ssh -p 1891 admin@equalexchange.coop"
+alias ssheer="ssh -p 1891 root@equalexchange.coop"
+alias sshci="ssh -p 22006 smackenzie@web.electricembers.net"
+alias sshqees="ssh -p 22023 quilted@web.electricembers.net"
+alias sshicp="ssh -p 21116 inclusive@web.electricembers.net"
+alias sshsb="ssh quilted@64.61.143.237"
 
 # Add shortcuts for testing.
 alias rspecd="rspec spec --color --format doc"
 alias cuke="cucumber"
+
+# Git shortcuts
+alias branch-clean="git branch --merged | xargs git branch -d; git branch"
+
+export LESS="-erX"
+export JSTESTDRIVER_HOME=/usr/local
+
+eval "$(rbenv init -)"
